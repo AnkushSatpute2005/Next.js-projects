@@ -18,12 +18,12 @@ const Navbar = () => {
 
   return (
     <nav className="bg-blue-950 text-white flex justify-between items-center px-4 h-16">
-      <div className="logo flex justify-center items-center gap-2">
+        <Link href={"/"} className="logo flex justify-center items-center gap-2">
         <span>
           <img src="/coffee-lover.gif" width={30} alt="" />
         </span>
-        <span className="font-bold">Get me a chai</span>
-      </div>
+        <span className="font-bold">Get me a chai</span></Link>
+      
       {/* <ul className='flex justify-around gap-4'>
             <li>Home</li>
             <li>About</li>
@@ -69,16 +69,17 @@ const Navbar = () => {
           <div id="dropdown" className={`z-10 ${showDropdown?"":"hidden"} left-[96px] m-2 absolute bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700`}>
     <ul className="py-2  text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
       <li>
-        <Link href="/dashboard" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</Link>
+        <Link className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white" href="/dashboard" >
+        <div>Dashboard</div></Link>
       </li>
       <li>
-        <Link href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</Link>
+        <Link href="" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</Link>
       </li>
       <li>
-        <Link href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</Link>
+        <Link href="" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</Link>
       </li>
       <li>
-        <Link href="#" onClick={()=>{signOut()}} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</Link>
+        <Link href="" onClick={()=>{signOut()}} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</Link>
       </li>
     </ul>
 </div>
@@ -100,9 +101,7 @@ const Navbar = () => {
         {!session && (
           <Link href={"/login"}>
             <button
-              className='className="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"'
-              
-            >
+             className="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 ">
               Login
             </button>
           </Link>
