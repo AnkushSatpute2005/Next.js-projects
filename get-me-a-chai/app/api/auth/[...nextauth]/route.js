@@ -39,7 +39,7 @@ callbacks: {
     const isAllowedToSignIn = true
     if (account.provider=="github") {
       //connect to the database
-      const client = await mongoose.connect()
+      const client = await mongoose.connect("mongodb://localhost:27017/chai")
 
       const currentUser = await User.findOne({email:email})
       if(!currentUser){
@@ -48,7 +48,11 @@ callbacks: {
           username:email.split("@")[0],
         })
         await newUser.save()
+        user.name= newUser.username
+      }else{
+        user.name=currentUser.username
       }
+      return true
     } 
   }
 }
